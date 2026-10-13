@@ -1163,7 +1163,7 @@ footer:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;backg
               </div>
               <div class="contact-item">
                 <div class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></div>
-                <div><small>Correo</small><div id="contactEmail"><a href="mailto:jluis.ochoa@imprentaochoa.com">jluis.ochoa@imprentaochoa.com</a></div></div>
+                <div><small>Correo</small><div id="contactEmail"><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jluis.ochoa@imprentaochoa.com&amp;su=Solicitud%20de%20informaci%C3%B3n" target="_blank" rel="noopener">jluis.ochoa@imprentaochoa.com</a></div></div>
               </div>
               <div class="contact-item">
                 <div class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></div>
@@ -1266,7 +1266,8 @@ footer:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;backg
       const el = document.getElementById("contactEmail");
       if (!el) return;
       if (CONTACT_EMAIL && !CONTACT_EMAIL.includes("REEMPLAZAR")) {
-        el.innerHTML = `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`;
+        // Abre la redacción de Gmail con el correo de la página como destinatario
+        el.innerHTML = `<a href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}&su=${encodeURIComponent("Solicitud de información")}" target="_blank" rel="noopener">${CONTACT_EMAIL}</a>`;
         el.classList.remove("placeholder");
       }
     }
